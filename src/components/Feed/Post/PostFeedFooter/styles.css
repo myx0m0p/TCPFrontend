@@ -1,0 +1,29 @@
+.footer {
+  margin: 14px 0 14px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: relative;
+}
+
+.infoBlock {
+  display: flex;
+}
+
+.commentСount {
+  display: grid;
+  grid-auto-flow: column;
+  grid-auto-columns: max-content;
+  grid-gap: 8px;
+  font-size: 16px;
+  font-weight: 600;
+  line-height: 20px;
+  color: #C4C4C4;
+  stroke: #C4C4C4;
+  fill: none;
+  margin-right: 20px;
+}
+
+.comments {
+  margin: 0 -20px -20px;
+}

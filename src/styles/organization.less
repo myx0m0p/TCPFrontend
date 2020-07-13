@@ -1,0 +1,31 @@
+.organization {
+  &__header {
+    margin: 0 0 40px;
+    padding: 40px 100px;
+    border-bottom: 1px solid #EAEAEA;
+
+    // @media (max-width: 767px) {
+    //   padding: 40px 20px;
+    // }
+
+    @media (min-width: 518px) and (max-width: 1023px) {
+      padding: 50px 50px;
+    }
+
+    @media (min-width: 518px) and (max-width: 767px) {
+      padding: 30px 30px;
+    }
+
+    @media (max-width: 517px) {
+      padding: 10px 10px 40px;
+    }
+  }
+
+  &__content {
+    padding: 0 100px 40px;
+
+    @media (max-width: 767px) {
+      padding: 0 20px 40px;
+    }
+  }
+}

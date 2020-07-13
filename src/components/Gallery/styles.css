@@ -1,0 +1,11 @@
+.gallery {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-gap: 5px;
+  margin: 0 0 20px;
+}
+
+.gallery > div:first-child {
+  grid-column-start: 1;
+  grid-column-end: 5;
+}

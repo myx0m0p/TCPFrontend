@@ -1,0 +1,91 @@
+html {
+  font-size: 14px;
+}
+
+body {
+  line-height: 1.2;
+  font-family: 'Montserrat', sans-serif;
+  word-wrap: break-word;
+  word-break: break-word;
+  overflow-wrap: break-word;
+  overflow-y: scroll;
+  -webkit-overflow-scrolling: touch;
+  color: @black;
+}
+
+svg {
+  fill: inherit;
+  display: block;
+}
+
+a, .link {
+  display: inline;
+  padding: 0;
+  margin: 0;
+  border: none;
+  text-decoration: none;
+  font-weight: inherit;
+  color: inherit;
+  cursor: pointer;
+  background: transparent;
+
+  &:hover {
+    text-decoration: underline;
+  }
+
+  &.red,
+  &.red-hover {
+    text-decoration: none;
+    transition: color 0.2s ease;
+
+    &:hover,
+    &.active {
+      color: #D8352F;
+      text-decoration: none;
+    }
+  }
+
+  &.red {
+    color: #D8352F;
+
+    &:hover,
+    &.active {
+      color: #C32924;
+    }
+  }
+
+  &.disabled {
+    color: #ccc !important;
+    cursor: default !important;
+
+    &:hover,
+    &.active {
+      color: #ccc !important;
+    }
+  }
+}
+
+h1 {
+  font-size: 3.4286rem;
+  line-height: 54px;
+  margin: 0;
+  font-weight: 800;
+}
+
+h2 {
+  font-size: 3.4286rem;
+  line-height: 56px;
+  margin: 0;
+}
+
+h3 {
+  font-size: 2rem;
+  line-height: 34px;
+  margin: 0;
+}
+
+h4 {
+  font-size: 1.142rem;
+  line-height: 22px;
+  margin: 0;
+}

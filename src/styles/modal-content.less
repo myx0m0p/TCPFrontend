@@ -1,0 +1,81 @@
+.modal-content {
+  position: relative;
+  box-sizing: border-box;
+  width: 100%;
+  padding: 40px;
+  margin: auto;
+}
+
+@media(max-width: 767px) {
+  .modal-content_airdrop {
+    padding: 40px 0;
+  }
+
+  .modal-content_airdrop .modal-content__close {
+    right: 40px;
+  }
+}
+
+.modal-content__close {
+  position: absolute;
+  top: 80px;
+  right: 80px;
+  padding: 5px;
+  z-index: 10;
+  font-size: 1.142rem;
+  background: #fff;
+  cursor: pointer;
+
+  @media (max-width: 767px) {
+    top: 50px;
+  }
+}
+
+.modal-content__close_text {
+  width: 70px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.modal-content__inner {
+  position: relative;
+  z-index: 2;
+  border-radius: 2px;
+  background: #fff;
+}
+
+.modal-content_wallet-activity-popup {
+  max-width: 800px;
+}
+
+.modal-content_brain-key {
+  max-width: 800px;
+}
+
+.modal-content_brainkey-info {
+  max-width: 800px;
+
+  .modal-content__inner {
+    padding: 40px;
+  }
+}
+
+.modal-content_post {
+  max-width: 680px;
+
+  .modal-content__inner {
+    background: transparent;
+  }
+}
+
+.modal-content_post-submit {
+  max-width: 680px;
+}
+
+.modal-content_small-close {
+  .modal-content__close {
+    top: 60px;
+    right: 60px;
+  }
+}

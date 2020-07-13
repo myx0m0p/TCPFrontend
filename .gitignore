@@ -1,0 +1,10 @@
+.DS_Store
+.idea
+node_modules
+public
+.history
+.vscode
+.npmrc
+npm-debug.log
+config
+server

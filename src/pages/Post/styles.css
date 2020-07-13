@@ -1,0 +1,150 @@
+.wrapper {
+  position: relative;
+  margin: 89px 0 0;
+}
+
+.content {
+  position: relative;
+  box-shadow: 0 0 20px rgba(184, 184, 184, 0.25);
+  background: #fff;
+}
+
+.section {
+  padding: 40px 20px;
+}
+
+.section .inner {
+  display: grid;
+  grid-template-columns: 1fr minmax(0, 7fr) 2fr;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.aside {
+  grid-column-start: 1;
+  grid-column-end: 2;
+}
+
+.bside {
+  grid-column-start: 3;
+  grid-column-end: 4;
+}
+
+.main {
+  grid-row-start: 1;
+  grid-column-start: 2;
+  grid-column-end: 3;
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  grid-gap: 46px;
+}
+
+.comments {
+  width: 100%;
+  max-width: 600px;
+  margin: 0 auto;
+  border: 1px solid #E7ECEC;
+  border-width: 0 1px 1px;
+}
+
+.rate {
+  text-align: right;
+}
+
+.rate .value {
+  margin: 0 0 3px;
+  font-size: 24px;
+  font-weight: bold;
+  line-height: 29px;
+}
+
+.rate .label {
+  padding: 0 10px 0 0;
+  text-transform: uppercase;
+  font-size: 10px;
+  line-height: 12px;
+  letter-spacing: 0.06em;
+  color: rgba(0,0,0,0.6);
+}
+
+.rating {
+  justify-self: flex-end;
+}
+
+.actions {
+  display: grid;
+  grid-gap: 20px;
+  justify-content: flex-end;
+  margin: 0 0 32px;
+}
+
+.line {
+  display: block;
+  margin: 0;
+  border: none;
+  border-top: 1px solid rgba(196, 196, 196, 0.3);
+}
+
+.user {
+  display: grid;
+  grid-template-columns: 1fr max-content;
+  align-items: center;
+}
+
+.stats {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+@media (max-width: 1023px) {
+  .section .inner {
+    grid-template-columns: 8fr 2fr;
+  }
+
+  .main {
+    grid-column-start: 1;
+    grid-column-end: 2;
+  }
+
+  .aside {
+    display: none;
+  }
+
+  .bside {
+    grid-column-start: 2;
+    grid-column-end: 3;
+  }
+}
+
+@media (max-width: 767px) {
+  .section .inner {
+    grid-template-columns: 1fr;
+  }
+
+  .main {
+    grid-row-start: 2;
+  }
+
+  .bside {
+    grid-column-start: 1;
+    grid-column-end: 2;
+  }
+
+  .actions {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .rate {
+    text-align: left;
+  }
+
+  .share {
+    grid-column-start: 1;
+    grid-column-end: 3;
+  }
+
+  .share [data-tooltipped] {
+    width: 100%;
+  }
+}

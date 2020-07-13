@@ -1,0 +1,80 @@
+.rate {
+  display: inline-block;
+}
+
+.rate__value {
+  position: relative;
+  font-size: 18px;
+  font-weight: 900;
+  white-space: nowrap;
+}
+
+.rate__label {
+  font-size: 10px;
+  text-transform: uppercase;
+  opacity: 0.6;
+}
+
+.rate__degree {
+  position: absolute;
+}
+
+.rate_big {
+  .rate__label {
+    font-size: 16px;
+    letter-spacing: 1px;
+  }
+
+  .rate__value {
+    margin: 0 0 4px;
+    font-size: 48px;
+    font-weight: 900;
+  }
+}
+
+.rate_small {
+  .rate__label {
+    margin-bottom: 6px;
+  }
+
+  .rate__value {
+    font-size: 16px;
+    font-weight: 700;
+    margin-bottom: 6px;
+  }
+}
+
+.rate_right {
+  text-align: right;
+}
+
+.rate_medium {
+  .rate__label {
+    font-size: 10px;
+    text-align: right;
+  }
+
+  .rate__value {
+    margin: 0 0 4px;
+    font-size: 24px;
+    font-weight: 900;
+  }
+}
+
+.rate_profile {
+  .rate__label {
+    margin: 0;
+    font-size: 14px;
+    text-transform: capitalize;
+  }
+
+  .rate__value {
+    font-size: 16px;
+    font-weight: 700;
+    margin: 5px 0;
+  }
+}
+
+.rate_color_black {
+  color: @black;
+}

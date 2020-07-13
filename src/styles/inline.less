@@ -1,0 +1,88 @@
+.inline {
+  display: inline-block;
+  margin: -8px;
+}
+
+.inline_flex {
+  display: flex;
+
+  &.inline_resp {
+    @media (max-width: 767px) {
+      flex-direction: column;
+    }
+  }
+
+  > .inline__item {
+    flex: 1;
+  }
+}
+
+.inline__item {
+  display: inline-block;
+  margin: 8px;
+  vertical-align: middle;
+
+  &__bell {
+    cursor: pointer;
+  }
+}
+
+.inline__group {
+  position: relative;
+  top: 1px;
+  // some necessary creepy thing for accurate visual conformity of modal header with profile header
+}
+
+.inline_xsmall {
+  margin: -2px;
+
+  > .inline__item {
+    margin: -2px;
+  }
+}
+
+.inline_small {
+  margin: -4px;
+
+  > .inline__item {
+    margin: 4px;
+  }
+}
+
+.inline_medium {
+  margin: -6px;
+
+  > .inline__item {
+    margin: 6px;
+  }
+}
+
+.inline_large {
+  margin: -16px;
+
+  > .inline__item {
+    margin: 16px;
+  }
+}
+
+.inline_xlarge {
+  margin: -18px;
+
+  > .inline__item {
+    margin: 18px;
+  }
+}
+
+.inline_baseline {
+  > .inline__item {
+    vertical-align: baseline;
+  }
+}
+
+.inline_without-margin {
+  margin: 0;
+
+  > .inline__item {
+    margin: 0;
+  }
+}

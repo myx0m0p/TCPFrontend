@@ -1,0 +1,201 @@
+.button {
+  box-sizing: border-box;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0 2em;
+  outline: none;
+  cursor: pointer;
+  border: none;
+  font-weight: bold;
+  border-radius: 4px;
+  white-space: nowrap;
+
+  &__checked-icon {
+    margin-top: 2px;
+    margin-left: 8px;
+  }
+
+  &:hover {
+    text-decoration: none;
+  }
+
+  &_theme {
+    &_red {
+      background: @red;
+      color: @white;
+
+      &:hover {
+        background: @red-dark;
+      }
+
+      &:active {
+        background: @red-darker;
+      }
+    }
+
+    &_red-white {
+      background: @white ;
+      color: @red;
+      border: 1px solid @red;
+      border-radius: 4px;
+      padding: 14px 20px;
+      height: 48px;
+    }
+
+    &_blue-green {
+      background: @blue-green;
+      color: @black;
+
+      &:hover {
+        background: @blue-green-dark;
+      }
+
+      &:active {
+        background: @blue-green-darker;
+      }
+    }
+
+    &_gray {
+      background: darken(@gray-lighter, 5);
+
+      &:hover {
+        background: lighten(@gray-light, 10);
+      }
+
+      &:active {
+        background: lighten(@gray-dark, 35);
+      }
+    }
+
+    &_black {
+      background-color: @black;
+      border: 1px solid @white;
+      color: @white;
+    }
+
+    &_transparent {
+      background: transparent;
+      border: 1px solid @gray;
+      transition: border 0.2s ease;
+
+      &:hover {
+        border: 1px solid @gray-dark;
+      }
+
+      &:active {
+        border: 1px solid @black;
+      }
+    }
+
+    &_thin {
+      background: transparent;
+      border: 1px solid #e1e1e1;
+
+      &:hover {
+        border: 1px solid @gray-dark;
+      }
+
+      &:active {
+        border: 1px solid @black;
+      }
+    }
+
+    &_light {
+      background: transparent;
+      border: 1px solid transparent;
+      color: #C4C4C4;
+    }
+
+    &_blank {
+      border-color: transparent;
+      background: rgba(0, 0, 0, 0.04);
+      color: transparent;
+      cursor: default;
+
+      &:extend(.flashing);
+    }
+
+    &_white {
+      border-color: transparent;
+      background: @white;
+    }
+
+    &_light {
+      border-color: transparent;
+      background: @white;
+      color: #C4C4C4;
+    }
+
+    &_light-black {
+      border-color: transparent;
+      background: @white;
+      color: #000;
+    }
+  }
+
+  &_disabled,
+  &_disabled:hover,
+  &_disabled:active {
+    border-color: #000;
+    background: rgba(0,0,0,0.3);
+    cursor: default;
+    color: #000;
+    opacity: 0.1;
+  }
+
+  &_size {
+    &_big {
+      min-height: 60px;
+      font-size: 1rem;
+
+      &.button_rounded {
+        border-radius: 30px;
+      }
+    }
+
+    &_medium {
+      min-height: 48px;
+      font-size: 1.14rem;
+
+      &.button_rounded {
+        border-radius: 24px;
+      }
+    }
+
+    &_small {
+      min-height: 40px;
+      font-size: 1.14rem;
+
+      &.button_rounded {
+        border-radius: 20px;
+      }
+    }
+  }
+
+  &_stretched {
+    width: 100%;
+  }
+
+  &_capitalized {
+    text-transform: capitalize;
+  }
+
+  &_upper {
+    text-transform: uppercase;
+    letter-spacing: 1px;
+  }
+
+  &_theme_accent{
+    padding: 10px 24px;
+
+    &-light {
+      background: white;
+      border: 1px solid #E8ECEC;
+    }
+
+    &-gray {
+      background: darken(@gray-lighter, 5);
+    }
+  }
+}

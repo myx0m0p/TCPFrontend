@@ -1,0 +1,160 @@
+.popup {
+  display: grid;
+  grid-template-rows: 1fr max-content;
+  grid-gap: 50px;
+  box-sizing: border-box;
+  padding: 50px;
+  width: 100%;
+  height: 100%;
+  color: #fff;
+  user-select: none;
+}
+
+.close {
+  position: absolute;
+  top: 0;
+  right: 0;
+  z-index: 3;
+  width: 50px;
+  height: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  fill: #fff;
+  cursor: pointer;
+}
+
+.next,
+.prev {
+  position: absolute;
+  padding: 0;
+  margin: 0;
+  border: none;
+  background: transparent;
+  z-index: 1;
+  top: 0;
+  width: 50%;
+  height: 100%;
+  fill: #fff;
+  outline: none;
+}
+
+.next:hover:not(:disabled) svg,
+.prev:hover:not(:disabled) svg {
+  opacity: 1;
+}
+
+.prev {
+  left: 0;
+  cursor: w-resize;
+}
+
+.next {
+  right: 0;
+  cursor: e-resize;
+}
+
+.next:disabled,
+.prev:disabled {
+  cursor: default;
+}
+
+.next svg,
+.prev svg {
+  position: absolute;
+  top: 50%;
+  margin-top: -8px;
+  opacity: 0.1;
+  transition: opacity 0.2s ease;
+}
+
+.next svg {
+  right: 18px;
+}
+
+.prev svg {
+  left: 18px;
+}
+
+.activeImage {
+  position: relative;
+}
+
+.activeImage img {
+  position: absolute;
+  z-index: 2;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  margin: auto;
+  display: block;
+  max-width: 100%;
+  max-height: 100%;
+  cursor: zoom-out;
+  background: #fff;
+}
+
+.toolbar {
+  position: relative;
+  display: grid;
+  grid-template-columns: max-content 1fr max-content;
+  align-items: center;
+  max-width: 1100px;
+  width: 100%;
+  margin: 0 auto;
+}
+
+.date {
+  margin: 0 0 13px;
+  font-size: 12px;
+  color: #c4c4c4;
+}
+
+.userCard {
+  position: relative;
+  z-index: 2;
+}
+
+@media (max-width: 767px) {
+  .userCard {
+    display: none;
+  }
+}
+
+.thumbs {
+  width: 100%;
+  height: 64px;
+}
+
+.thumb {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  z-index: 0;
+  width: 64px;
+  height: 64px;
+  margin-left: -32px;
+  transition: transform 0.6s ease;
+  cursor: pointer;
+  background: #fff;
+  border-radius: 4px;
+}
+
+.thumb img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 4px;
+}
+
+.counter {
+  font-size: 16px;
+  font-weight: bold;
+}
+
+@media (max-width: 767px) {
+  .counter {
+    display: none;
+  }
+}

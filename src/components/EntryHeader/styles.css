@@ -1,0 +1,197 @@
+.entryHead {
+  position: relative;
+  padding: 50px 50px 28px;
+  border-radius: 12px;
+  box-shadow: 0px 0px 20px rgba(184, 184, 184, 0.25);
+  word-break: break-word;
+  white-space: pre-wrap;
+  background: #fff;
+}
+
+.entryHead.organization,
+.entryHead.tag {
+  border-radius: 0;
+}
+
+.menu [data-tooltipped] {
+  transition: opacity 0.2s ease;
+  opacity: 0;
+}
+
+.entryHead:hover .menu [data-tooltipped],
+.menu :global([data-tooltipped].active) {
+  opacity: 1;
+}
+
+.main {
+  display: grid;
+  grid-template-columns: 100px 1fr max-content;
+  grid-column-gap: 20px;
+  grid-row-gap: 20px;
+  padding: 0 0 44px;
+  margin: 0 0 26px;
+  border-bottom: 1px solid #E8ECEC;
+}
+
+.main.noAvatar {
+  grid-template-columns: 1fr max-content;
+}
+
+.side {
+  display: flex;
+  align-items: center;
+}
+
+.edit {
+  position: absolute;
+  z-index: 1;
+  top: 10px;
+  left: 10px;
+  width: 32px;
+  height: 32px;
+  opacity: 0;
+  transition: opacity 0.2s ease;
+}
+
+.entryHead:hover .edit {
+  opacity: 1;
+}
+
+.rate {
+  justify-self: flex-end;
+  font-size: 28px;
+  font-weight: bold;
+  line-height: 34px;
+  color: #585858;
+}
+
+.accountName {
+  margin: 0 0 3px;
+  font-size: 12px;
+  color: #585858;
+}
+
+.userName {
+  margin: 0 0 12px;
+  font-size: 28px;
+  font-weight: bold;
+  line-height: 34px;
+  color: #000;
+}
+
+.userName.big {
+  font-size: 48px;
+  line-height: 60px;
+}
+
+.followButton {
+  width: 160px;
+}
+
+.usersLists {
+  flex: 1 1 auto;
+  display: grid;
+  grid-column-gap: 32px;
+  grid-row-gap: 20px;
+  grid-auto-flow: column;
+  grid-auto-columns: max-content;
+  align-items: center;
+  justify-content: flex-end;
+  min-height: 48px;
+}
+
+.menu {
+  position: absolute;
+  top: 15px;
+  right: 20px;
+}
+
+@media (max-width: 767px) {
+  .entryHead {
+    padding: 20px;
+  }
+
+  .main {
+    padding: 0 0 20px;
+    margin: 0 0 20px;
+  }
+
+  .info {
+    grid-column-start: 1;
+    grid-column-end: 4;
+    grid-row-start: 2;
+  }
+
+  .main.noAvatar .info {
+    grid-column-start: 1;
+    grid-column-end: 2;
+    grid-row-start: 1;
+  }
+
+  .rate {
+    grid-column-start: 3;
+  }
+
+  .main.noAvatar .rate {
+    grid-column-start: 2;
+  }
+
+  .side {
+    flex-direction: column-reverse;
+  }
+
+  .followButton {
+    width: 100%;
+    margin: 20px 0 0;
+  }
+
+  .usersLists {
+    width: 100%;
+    justify-content: flex-start;
+    grid-auto-flow: initial;
+    grid-auto-columns: initial;
+    grid-template-columns: 1fr 1fr;
+    grid-column-gap: 20px;
+  }
+
+  .edit {
+    top: 7px;
+    left: 7px;
+    width: 24px;
+    height: 24px;
+    opacity: 1;
+  }
+
+  .menu {
+    display: none;
+  }
+}
+
+@media (max-width: 320px) {
+  .usersLists {
+    width: initial;
+    grid-template-columns: 1fr;
+  }
+}
+
+.cover {
+  height: 220px;
+  margin: -50px -50px 32px;
+  background: rgba(0,0,0,0.1);
+}
+
+.cover img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+@media (max-width: 767px) {
+  .cover {
+    height: 150px;
+    margin-top: -20px;
+    margin-left: -20px;
+    margin-right: -20px;
+  }
+}

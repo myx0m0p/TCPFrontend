@@ -1,0 +1,52 @@
+.entryCard {
+  display: grid;
+  grid-template-columns: 36px 1fr;
+  grid-column-gap: 10px;
+  grid-row-gap: 2px;
+  width: 100%;
+  line-height: normal;
+}
+
+.entryCard.withRate {
+  grid-template-columns: 36px 1fr max-content;
+}
+
+.entryCard.disableAvatar .title,
+.entryCard.disableAvatar .nickname {
+  grid-column-start: 1;
+}
+
+.userPick {
+  grid-row-start: 1;
+  grid-row-end: 3;
+}
+
+.title {
+  grid-column-start: 2;
+  grid-column-end: 3;
+  font-size: 14px;
+  font-weight: bold;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.nickname {
+  grid-column-start: 2;
+  grid-column-end: 3;
+  font-size: 12px;
+  color: #000;
+  opacity: 0.6;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.rate {
+  grid-column-start: 3;
+  grid-row-start: 1;
+  grid-row-end: 3;
+  font-size: 14px;
+  font-weight: bold;
+  color: #585858;
+}

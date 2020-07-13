@@ -1,0 +1,226 @@
+{
+  "name": "@myx0m0p/tcp-frontend",
+  "version": "1.0.0",
+  "description": "TCP Frontend",
+  "main": "index.js",
+  "scripts": {
+    "start": "npm run dev",
+    "server": "pm2 restart ecosystem-test.config.js",
+    "server:dev": "pm2 restart ecosystem-dev.config.js",
+    "dev": "cross-env BABEL_ENV=dev NODE_ENV=dev webpack --config ./webpack.config.js --mode development --watch",
+    "build": "cross-env BABEL_ENV=development NODE_ENV=dev webpack --config ./webpack.config.js --mode development",
+    "production": "cross-env BABEL_ENV=production NODE_ENV=production webpack --config ./webpack.config.js --mode production"
+  },
+  "engines": {
+    "node": ">=12.18.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/myx0m0p/TCPFrontend.git"
+  },
+  "publishConfig": {
+    "registry": "https://npm.pkg.github.com/"
+  },
+  "keywords": [
+    "TCP",
+    "Telos",
+    "EOSIO"
+  ],
+  "homepage": "https://github.com/myx0m0p/TCPFrontend/blob/master/README.md",
+  "author": "Andrew U <tmyx0m0p@gmail.com>",
+  "license": "MIT",
+  "baseUrl": {
+    "production": "https://ucommunity.io",
+    "staging": "http://localhost:8080"
+  },
+  "uosGroupId": {
+    "staging": 41,
+    "production": 4
+  },
+  "airdropOfferId_1": {
+    "staging": 14317,
+    "production": 6137
+  },
+  "airdropOfferId_2": {
+    "staging": 14786,
+    "production": 8515
+  },
+  "gitHubAuthLink": {
+    "staging": "https://github.com/login/oauth/authorize/?client_id=ec17c7e5b1f383034c25&state=5idkWlsZKzbpcD7u&redirect_uri=https://staging-backend.ucommunity.io/api/v1/github/auth_callback?redirect_uri=https://staging.ucommunity.io/posts/14786",
+    "production": "https://github.com/login/oauth/authorize/?client_id=8b4ef608525c8aff2d5e&state=5idkWlsZKzbpcD7u&redirect_uri=https://backend.ucommunity.io/api/v1/github/auth_callback?redirect_uri=https://ucommunity.io/posts/8515"
+  },
+  "eosPostId": {
+    "staging": 14718,
+    "production": 10715
+  },
+  "referralPostId": {
+    "staging": 14718,
+    "production": 11458
+  },
+  "grecaptchaSitekey": "6Leg_KEUAAAAANesBGRTETXBWJycatPc0EneSbTp",
+  "backend": {
+    "development": {
+      "httpEndpoint": "http://localhost:3000",
+      "graphqlEndpoint": "http://localhost:4000",
+      "socketEndpoint": "http://localhost:5000",
+      "uploaderEndpoint": "http://localhost:6000"
+    },
+    "staging": {
+      "httpEndpoint": "http://localhost:3000",
+      "graphqlEndpoint": "http://localhost:4000",
+      "socketEndpoint": "http://localhost:5000",
+      "uploaderEndpoint": "http://localhost:6000"
+    },
+    "production": {
+      "httpEndpoint": "https://backend.ucommunity.io",
+      "graphqlEndpoint": "https://backend.ucommunity.io",
+      "socketEndpoint": "https://websocket.ucommunity.io:443",
+      "uploaderEndpoint": "https://uploader.ucommunity.io"
+    }
+  },
+  "blockchain": {
+    "dev": {
+      "host": "api.uos.network",
+      "protocol": "https",
+      "port": "443"
+    },
+    "staging": {
+      "host": "api.uos.network",
+      "protocol": "https",
+      "port": "443"
+    },
+    "production": {
+      "host": "api.uos.network",
+      "protocol": "https",
+      "port": "443"
+    }
+  },
+  "iframely": {
+    "httpEndpoint": "https://iframely.ucommunity.io/iframely"
+  },
+  "allowedVideoHosts": [
+    "www.youtube.com",
+    "youtube.com",
+    "player.vimeo.com",
+    "coub.com",
+    "www.coub.com"
+  ],
+  "maintenanceMode": false,
+  "socketEnabled": true,
+  "devDependencies": {
+    "@typescript-eslint/eslint-plugin": "^2.34.0",
+    "@typescript-eslint/parser": "^2.34.0",
+    "autoprefixer": "^8.6.3",
+    "babel-core": "^6.26.3",
+    "babel-eslint": "^8.2.3",
+    "babel-loader": "^7.1.5",
+    "babel-plugin-module-resolver": "^3.2.0",
+    "babel-plugin-transform-decorators-legacy": "^1.3.5",
+    "babel-polyfill": "^6.26.0",
+    "babel-preset-env": "^1.7.0",
+    "babel-preset-es2015": "^6.24.1",
+    "babel-preset-react": "^6.24.1",
+    "babel-preset-stage-0": "^6.24.1",
+    "babel-preset-stage-2": "^6.24.1",
+    "copy-webpack-plugin": "^4.6.0",
+    "cross-env": "^7.0.2",
+    "css-loader": "^0.28.11",
+    "eslint": "^6.8.0",
+    "eslint-config-airbnb-base": "^14.2.0",
+    "eslint-import-resolver-typescript": "^2.0.0",
+    "eslint-loader": "^4.0.2",
+    "eslint-plugin-import": "^2.22.0",
+    "eslint-plugin-jest": "^23.17.1",
+    "eslint-plugin-jsx-a11y": "^6.3.1",
+    "eslint-plugin-node": "^11.1.0",
+    "eslint-plugin-optimize-regex": "^1.2.0",
+    "eslint-plugin-promise": "^4.2.1",
+    "eslint-plugin-react": "^7.20.3",
+    "eslint-plugin-react-hooks": "4.0.5",
+    "eslint-plugin-security": "^1.4.0",
+    "eslint-plugin-sonarjs": "^0.5.0",
+    "eslint-plugin-unicorn": "^15.0.1",
+    "eslint-plugin-you-dont-need-lodash-underscore": "^6.10.0",
+    "file-loader": "^1.1.11",
+    "html-loader": "^0.5.5",
+    "isomorphic-style-loader": "^5.1.0",
+    "less": "^3.11.3",
+    "less-loader": "^4.1.0",
+    "pm2": "^4.4.0",
+    "postcss-loader": "^2.1.5",
+    "react-countdown-now": "^2.1.2",
+    "style-loader": "^0.21.0",
+    "typescript": "^3.9.5",
+    "url-loader": "^1.1.2",
+    "webpack": "^4.43.0",
+    "webpack-cli": "^3.3.12",
+    "webpack-dev-server": "^3.11.0",
+    "worker-loader": "^2.0.0"
+  },
+  "dependencies": {
+    "@myx0m0p/tcp-common-lib": "^1.0.2",
+    "@myx0m0p/tcp-graphql-lib": "^1.0.1",
+    "@myx0m0p/tcp-wallet-lib": "^1.0.2",
+    "@scatterjs/core": "^2.7.53",
+    "@scatterjs/eosjs2": "^1.5.35",
+    "@tippy.js/react": "^1.1.1",
+    "autosize": "^4.0.2",
+    "axios": "^0.19.2",
+    "babel-plugin-transform-runtime": "^6.23.0",
+    "babel-register": "^6.26.0",
+    "body-parser": "^1.19.0",
+    "classnames": "^2.2.6",
+    "comlink": "^4.3.0",
+    "config": "^3.3.1",
+    "cookie-parser": "^1.4.5",
+    "crypto": "^1.0.1",
+    "crypto-js": "^3.3.0",
+    "decko": "^1.2.0",
+    "eosjs": "^20.0.3",
+    "eosjs-ecc": "^4.0.7",
+    "express": "^4.17.1",
+    "history": "^4.10.1",
+    "i18next": "^19.5.3",
+    "imports-loader": "^0.8.0",
+    "jquery-param": "^1.0.5",
+    "js-cookie": "^2.2.1",
+    "keycode-js": "^1.0.4",
+    "lodash": "^4.17.15",
+    "lodash-humps": "^3.1.5",
+    "medium-editor": "^5.23.3",
+    "moment": "^2.27.0",
+    "moment-duration-format": "^2.3.2",
+    "normalize-url": "^4.5.0",
+    "normalize.css": "^8.0.1",
+    "object-to-formdata": "^1.6.4",
+    "pluralize": "^8.0.0",
+    "promise-worker": "^2.0.1",
+    "prop-types": "^15.7.2",
+    "rc-pagination": "^1.21.1",
+    "react": "^16.13.1",
+    "react-copy-to-clipboard": "^5.0.2",
+    "react-device-detect": "^1.13.1",
+    "react-dom": "^16.13.1",
+    "react-dropzone": "^5.1.1",
+    "react-i18next": "^11.7.0",
+    "react-redux": "^7.2.0",
+    "react-router": "^5.2.0",
+    "react-router-dom": "^5.2.0",
+    "react-scroll": "^1.7.16",
+    "react-select": "^2.4.4",
+    "react-sortable-hoc": "^1.11.0",
+    "react-transition-group": "^2.9.0",
+    "redux": "^4.0.5",
+    "redux-devtools-extension": "^2.13.8",
+    "redux-thunk": "^2.3.0",
+    "sanitize-html": "^1.27.0",
+    "socket.io": "^2.3.0",
+    "socket.io-client": "^2.3.0",
+    "textarea-caret": "^3.1.0",
+    "tributejs": "git+https://github.com/UOSnetwork/tribute.git",
+    "uuid": "^3.4.0",
+    "validate.js": "^0.12.0",
+    "validatorjs": "^3.18.1",
+    "xss": "^1.0.7"
+  }
+}

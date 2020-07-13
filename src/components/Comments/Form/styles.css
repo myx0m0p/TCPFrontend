@@ -1,0 +1,194 @@
+.form {
+  display: flex;
+  padding: 20px;
+  flex-direction: column;
+  overflow-x: hidden;
+}
+
+.formMain {
+  display: flex;
+}
+
+
+.form[depth="1"] {
+  padding-left: 64px;
+}
+
+.form[depth="2"] {
+  padding-left: 108px;
+}
+
+.userPick {
+  margin: 0 8px 0 0;
+  padding: 6px 0 0;
+}
+
+.content {
+  flex: 1 1 auto;
+}
+
+.field {
+  display: flex;
+  align-items: flex-end;
+  border: 1px solid #B1B1B1;
+  border-radius: 4px;
+  position: relative;
+}
+
+:global(body.dragenter) .field {
+  border: none;
+}
+
+.inputWrapper {
+  flex: 1 1 auto;
+}
+
+.input {
+  display: block;
+  width: 100%;
+  line-height: 1;
+  box-sizing: border-box;
+  padding: 10px 15px 8px;
+  border: none;
+  font-size: 16px;
+  line-height: 28px;
+  resize: none;
+  outline: none;
+  background: transparent;
+}
+
+.input::placeholder {
+  opacity: 1;
+  color: #C1C1C1;
+}
+
+.input:disabled {
+  opacity: 0.5;
+}
+
+.action {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 24px;
+  height: 24px;
+  margin-right: 15px;
+  cursor: pointer;
+  fill: #c4c4c4;
+}
+
+.action:hover {
+  fill: #767676;
+}
+
+.images {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-column-gap: 8px;
+  grid-row-gap: 8px;
+  flex-wrap: wrap;
+  margin: 8px 0 0;
+}
+
+.imageWrapper {
+  position: relative;
+  z-index: 0;
+
+  width: auto;
+}
+
+.image {
+  display: block;
+  width: 100%;
+  margin-left: auto;
+  object-fit: cover;
+  height: 77px;
+}
+
+.imageRemove {
+  position: absolute;
+  z-index: 1;
+  top: 4px;
+  right: 4px;
+}
+
+.form.flat {
+  border-top: 1px solid #E7ECEC;
+}
+
+.form.flat .field {
+  border: none;
+}
+
+.form.flat .userPick {
+  padding: 0;
+}
+
+.form.flat .input {
+  padding: 4px 22px 4px 10px;
+}
+
+.form.flat .actions {
+  height: 36px;
+}
+
+.form.flat .action  {
+  margin-right: 0;
+}
+
+.containerActions {
+  position: relative;
+  display: flex;
+  justify-content: flex-end;
+  top: -9px;
+}
+
+.containerActions.disabled {
+  pointer-events: none;
+  opacity: 0.3;
+}
+
+.label {
+  fill: #c4c4c4;
+  cursor: pointer;
+  width: 24px;
+  height: 24px;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  top: 4px;
+}
+
+.labelFile {
+  display: none;
+}
+
+.dragNdrop {
+  display: flex;
+  align-items: flex-end;
+}
+
+.label:hover {
+  fill: #767676;
+}
+
+@keyframes loader {
+  0%{
+    background-position:50% 0%;
+  }
+  33%{
+    background-position:50% 100%;
+  }
+  100%{
+    background-position:50% 0%;
+  }
+}
+
+.preloader {
+  animation-iteration-count: infinite;
+  animation-duration: 1.5s;
+  animation-name: loader;
+  animation-timing-function: ease;
+  background: linear-gradient(180deg, #bbbbbb, #eeeeee);
+  background-size: 200% 200%;
+}

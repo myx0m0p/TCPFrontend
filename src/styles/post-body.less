@@ -1,0 +1,29 @@
+.post-body {
+  margin: 0 0 32px;
+  padding: 40px 40px 64px;
+  box-shadow: 0 0 20px rgba(184, 184, 184, 0.25);
+  background: #fff;
+
+  @media (max-width: 767px) {
+    padding: 20px 0 0;
+    box-shadow: none;
+  }
+}
+
+.post-body__share {
+  position: relative;
+  justify-self: flex-end;
+
+  @media (max-width: 1023px) {
+    grid-column-start: 1;
+    grid-column-end: 3;
+    justify-self: initial;
+  }
+}
+
+.post-body__comments {
+  max-width: 600px;
+  margin: 0 auto;
+  border: 1px solid #E7ECEC;
+  border-width: 0 1px 1px;
+}
