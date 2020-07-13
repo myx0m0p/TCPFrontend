@@ -158,9 +158,9 @@
     "worker-loader": "^2.0.0"
   },
   "dependencies": {
-    "@myx0m0p/tcp-common-lib": "^1.0.2",
+    "@myx0m0p/tcp-common-lib": "^1.0.3",
     "@myx0m0p/tcp-graphql-lib": "^1.0.1",
-    "@myx0m0p/tcp-wallet-lib": "^1.0.2",
+    "@myx0m0p/tcp-wallet-lib": "^1.0.3",
     "@scatterjs/core": "^2.7.53",
     "@scatterjs/eosjs2": "^1.5.35",
     "@tippy.js/react": "^1.1.1",
