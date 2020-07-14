@@ -6,8 +6,8 @@
   "scripts": {
     "start": "npm run dev",
     "server": "pm2 restart ecosystem-test.config.js",
-    "server:dev": "pm2 restart ecosystem-dev.config.js",
-    "dev": "cross-env BABEL_ENV=dev NODE_ENV=dev webpack --config ./webpack.config.js --mode development --watch",
+    "dev:run": "cross-env NODE_ENV=dev BABEL_ENV=server PORT=8080 node-dev --respawn server/index.js",
+    "dev:build": "cross-env BABEL_ENV=dev NODE_ENV=dev webpack --config ./webpack.config.js --mode development --watch",
     "build": "cross-env BABEL_ENV=development NODE_ENV=dev webpack --config ./webpack.config.js --mode development",
     "production": "cross-env BABEL_ENV=production NODE_ENV=production webpack --config ./webpack.config.js --mode production"
   },
@@ -146,6 +146,7 @@
     "isomorphic-style-loader": "^5.1.0",
     "less": "^3.12.0",
     "less-loader": "^4.1.0",
+    "node-dev": "^5.0.0",
     "pm2": "^4.4.0",
     "postcss-loader": "^2.1.5",
     "react-countdown-now": "^2.1.2",
@@ -158,9 +159,9 @@
     "worker-loader": "^2.0.0"
   },
   "dependencies": {
-    "@myx0m0p/tcp-common-lib": "^1.0.3",
+    "@myx0m0p/tcp-common-lib": "^1.0.4",
     "@myx0m0p/tcp-graphql-lib": "^1.0.1",
-    "@myx0m0p/tcp-wallet-lib": "^1.0.3",
+    "@myx0m0p/tcp-wallet-lib": "^1.0.4",
     "@scatterjs/core": "^2.7.53",
     "@scatterjs/eosjs2": "^1.5.35",
     "@tippy.js/react": "^1.1.1",
