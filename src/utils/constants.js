@@ -102,6 +102,8 @@ export const TRANSACTION_PERMISSION_SOCIAL = 'social';
 
 export const TRX_TYPE_TRANSFER_FROM = 10;
 export const TRX_TYPE_TRANSFER_TO = 11;
+export const TRX_TYPE_TRANSFER = 12;
+export const TRX_TYPE_TRANSFER_FOREIGN = 13;
 export const TRX_TYPE_STAKE_RESOURCES = 20;
 export const TRX_TYPE_UNSTAKING_REQUEST = 30;
 export const TRX_TYPE_VOTE_FOR_BP = 40;

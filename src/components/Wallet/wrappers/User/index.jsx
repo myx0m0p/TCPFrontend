@@ -15,6 +15,8 @@ import * as Icons from '../../../Icons/WalletIcons';
 import {
   TRX_TYPE_TRANSFER_FROM,
   TRX_TYPE_TRANSFER_TO,
+  TRX_TYPE_TRANSFER,
+  TRX_TYPE_TRANSFER_FOREIGN,
   TRX_TYPE_STAKE_RESOURCES,
   TRX_TYPE_UNSTAKING_REQUEST,
   TRX_TYPE_VOTE_FOR_BP,
@@ -33,6 +35,8 @@ const TRANSACTIONS_PER_PAGE = 50;
 const transactionTypes = [
   TRX_TYPE_TRANSFER_FROM,
   TRX_TYPE_TRANSFER_TO,
+  TRX_TYPE_TRANSFER,
+  TRX_TYPE_TRANSFER_FOREIGN,
   TRX_TYPE_STAKE_RESOURCES,
   TRX_TYPE_UNSTAKING_REQUEST,
   TRX_TYPE_VOTE_FOR_BP,
@@ -354,6 +358,17 @@ const UserWallet = ({ location }) => {
                     avatarSrc: urls.getFileUrl(trx.user.avatarFilename) || '',
                     title: `@${trx.user.accountName}`,
                     amount: `${trx.trType === TRX_TYPE_TRANSFER_FROM ? '– ' : ''}${round(trx.tokens.active, 2)} ${trx.tokens.currency}`,
+                    message: trx.memo,
+                  });
+
+                case TRX_TYPE_TRANSFER:
+                case TRX_TYPE_TRANSFER_FOREIGN:
+                  return ({
+                    ...commonProps,
+                    type: t('Transfer'),
+                    icon: <Icons.Default />,
+                    title: `${trx.accountNameFrom} > ${trx.accountNameTo}`,
+                    amount: `${trx.trType === TRX_TYPE_TRANSFER ? '– ' : ''}${round(trx.tokens.active, 2)} ${trx.tokens.currency}`,
                     message: trx.memo,
                   });
 
