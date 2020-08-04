@@ -357,7 +357,7 @@ const UserWallet = ({ location }) => {
                     type: t('Transfer'),
                     avatarSrc: urls.getFileUrl(trx.user.avatarFilename) || '',
                     title: `@${trx.user.accountName}`,
-                    amount: `${trx.trType === TRX_TYPE_TRANSFER_FROM ? '– ' : ''}${round(trx.tokens.active, 2)} ${trx.tokens.currency}`,
+                    amount: `${trx.trType === TRX_TYPE_TRANSFER_FROM ? '– ' : ''}${round(trx.tokens.active, 4)} ${trx.tokens.currency}`,
                     message: trx.memo,
                   });
 
@@ -368,7 +368,7 @@ const UserWallet = ({ location }) => {
                     type: t('Transfer'),
                     icon: <Icons.Default />,
                     title: `${trx.accountNameFrom} > ${trx.accountNameTo}`,
-                    amount: `${trx.trType === TRX_TYPE_TRANSFER ? '– ' : ''}${round(trx.tokens.active, 2)} ${trx.tokens.currency}`,
+                    amount: `${trx.trType === TRX_TYPE_TRANSFER ? '– ' : ''}${round(trx.tokens.active, 4)} ${trx.tokens.currency}`,
                     message: trx.memo,
                   });
 
@@ -380,11 +380,11 @@ const UserWallet = ({ location }) => {
                   let title;
 
                   if (trx.trType === TRX_TYPE_STAKE_RESOURCES) {
-                    net = round(trx.resources.net.tokens.selfDelegated, 2);
-                    cpu = round(trx.resources.cpu.tokens.selfDelegated, 2);
+                    net = round(trx.resources.net.tokens.selfDelegated, 4);
+                    cpu = round(trx.resources.cpu.tokens.selfDelegated, 4);
                   } else {
-                    net = round(trx.resources.net.unstakingRequest.amount, 2);
-                    cpu = round(trx.resources.cpu.unstakingRequest.amount, 2);
+                    net = round(trx.resources.net.unstakingRequest.amount, 4);
+                    cpu = round(trx.resources.cpu.unstakingRequest.amount, 4);
                   }
 
                   if (net && cpu) {
@@ -420,7 +420,7 @@ const UserWallet = ({ location }) => {
                     type: t('Withdraw'),
                     icon: <Icons.Emission />,
                     title: t('Recieved emission'),
-                    amount: `${round(trx.tokens.emission, 2)} ${trx.tokens.currency}`,
+                    amount: `${round(trx.tokens.emission, 4)} ${trx.tokens.currency}`,
                   });
 
                 case TRX_TYPE_BUY_RAM:
@@ -430,7 +430,7 @@ const UserWallet = ({ location }) => {
                     type: trx.trType === TRX_TYPE_BUY_RAM ? t('Buy RAM') : t('Sell RAM'),
                     icon: <Icons.Ram />,
                     title: t(`${trx.trType === TRX_TYPE_BUY_RAM ? 'Bought' : 'Sold'} RAM`),
-                    amount: `${trx.trType === TRX_TYPE_BUY_RAM ? '– ' : ''}${round(trx.resources.ram.tokens.amount, 2)} ${trx.resources.ram.tokens.currency}`,
+                    amount: `${trx.trType === TRX_TYPE_BUY_RAM ? '+ ' : '-'}${round(trx.resources.ram.amount, 4)} ${trx.resources.ram.dimension}`,
                   });
 
                 case TRX_TYPE_VOTE_FOR_BP:
