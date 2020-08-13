@@ -10,6 +10,8 @@ import {
   ACTION_BUY_RAM_BYTES,
   ACTION_VOTE_PRODUCER,
   ACTION_VOTE_PRODUCER_CALCULATORS,
+  SMART_CONTRACT_TIMELOCK,
+  ACTION_UNLOCK,
 } from './constants';
 import Utils from './utils';
 
@@ -64,6 +66,17 @@ export default class Actions {
     return {
       account: SMART_CONTRACT_EMISSION,
       name: ACTION_WITHDRAWAL,
+      authorization,
+      data: {
+        owner: accountNameFrom,
+      },
+    };
+  }
+
+  static getTimeUnlockAction(authorization, accountNameFrom) {
+    return {
+      account: SMART_CONTRACT_TIMELOCK,
+      name: ACTION_UNLOCK,
       authorization,
       data: {
         owner: accountNameFrom,

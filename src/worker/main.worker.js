@@ -1,6 +1,7 @@
 import Wallet from '@myx0m0p/tcp-wallet-lib';
 import ecc from 'eosjs-ecc';
 import registerPromiseWorker from 'promise-worker/register';
+import { getBlockchainApiEndpoint, getBlockchainHistoryEndpoint } from '../utils/config';
 import {
   getActivePrivateKey,
   getSocialPrivateKeyByActiveKey,
@@ -11,18 +12,18 @@ import {
 import * as actions from './actions';
 
 const {
-  SocialKeyApi, SocialApi, ContentApi, WalletApi, MultiSignatureApi, ContentPublicationsActionsApi,
+  ConfigService, SocialKeyApi, SocialApi, ContentApi, WalletApi, MultiSignatureApi, ContentPublicationsActionsApi,
 } = Wallet;
 
 const {
   ContentInteractionsApi, PublicationsApi, OrganizationsApi,
 } = Wallet.Content;
 
-if (process.env.NODE_ENV === 'production') {
-  WalletApi.initForProductionEnv();
-} else {
-  WalletApi.initForStagingEnv();
-}
+ConfigService.init({
+  apiEndpoint: getBlockchainApiEndpoint(),
+  historyEndpoint: getBlockchainHistoryEndpoint(),
+  calculatorEndpoint: getBlockchainApiEndpoint(),
+});
 
 registerPromiseWorker((action) => {
   switch (action.type) {

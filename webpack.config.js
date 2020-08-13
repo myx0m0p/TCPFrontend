@@ -1,4 +1,5 @@
 const CopyWebpackPlugin = require('copy-webpack-plugin');
+const Dotenv = require('dotenv-webpack');
 const autoprefixer = require('autoprefixer');
 const path = require('path');
 
@@ -20,6 +21,11 @@ const clientConfig = {
       { from: './src/u.png', flatten: true },
       ...process.env.NODE_ENV === 'staging' ? [{ from: './src/robot.txt', flatten: true }] : [],
     ]),
+    new Dotenv({
+      safe: true,
+      allowEmptyValues: true,
+      systemvars: true,
+    }),
   ],
 
   module: {
@@ -126,6 +132,14 @@ const serverConfig = {
     './src/server.js',
   ],
 
+  plugins: [
+    new Dotenv({
+      safe: true,
+      allowEmptyValues: true,
+      systemvars: true,
+    }),
+  ],
+
   module: {
     rules: [
       {
@@ -162,16 +176,7 @@ const serverConfig = {
             attrs: [':data-src'],
           },
         },
-      },
-      {
-        test: /\.(png|svg|gif|jpg|jpeg)/,
-        use: {
-          loader: 'file-loader',
-          options: {
-            name: 'images/[path][name].[ext]',
-          },
-        },
-      },
+      }
     ],
   },
 

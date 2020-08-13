@@ -17,7 +17,7 @@ import VoteSection from './VoteSection';
 import Voting from './Voting';
 import urls from '../../utils/urls';
 import { formatScaledImportance, formatRate } from '../../utils/rate';
-import { getUosGroupId } from '../../utils/config';
+import { getRootCommunityId } from '../../utils/config';
 import { selectOwner, selectOrgById } from '../../store/selectors';
 import { getOrganization } from '../../actions/organizations';
 import withLoader from '../../utils/withLoader';
@@ -27,12 +27,12 @@ const GovernancePage = () => {
   const { t } = useTranslation();
   const state = useSelector(state => state.pages.governance.main);
   const owner = useSelector(selectOwner);
-  const org = useSelector(selectOrgById(getUosGroupId()));
+  const org = useSelector(selectOrgById(getRootCommunityId()));
   const dispatch = useDispatch();
 
   const getOrg = async () => {
     try {
-      await withLoader(dispatch(getOrganization(getUosGroupId())));
+      await withLoader(dispatch(getOrganization(getRootCommunityId())));
     } catch (err) {
       dispatch(addErrorNotificationFromResponse(err));
     }

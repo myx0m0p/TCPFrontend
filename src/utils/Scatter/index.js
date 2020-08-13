@@ -108,6 +108,15 @@ export default class Scatter {
     return result;
   }
 
+  async unlockTimelocked(accountName) {
+    Validator.isAccountNameAnActorOrExceptionAndLogout(this.account.name, accountName);
+    await Validator.isAccountNameExitOrException(accountName);
+    const actions = [Actions.getTimeUnlockAction(this.authorization, accountName)];
+    const result = await this.sendTransaction(actions);
+
+    return result;
+  }  
+
   async sellRam(accountName, bytesAmount) {
     Validator.isAccountNameAnActorOrExceptionAndLogout(this.account.name, accountName);
     Validator.isNonNegativeBytesAmountOrException(bytesAmount);

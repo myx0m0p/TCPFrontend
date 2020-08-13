@@ -1,10 +1,8 @@
 import HomePage, { getHomePageData } from './pages/Home';
 import UserPage, { getUserPageData } from './pages/User/index';
 import EditPostPage from './pages/EditPost';
-import { DefaultPost, EosPost, getDefaultPostData, getEosPostData } from './pages/Post/index';
+import { DefaultPost, getDefaultPostData } from './pages/Post/index';
 import OverviewPage, { getPageData } from './pages/Overview';
-import Offer, { getPostOfferData } from './pages/Offer';
-import Offer2, { getPostOfferData_2 } from './pages/Offer2';
 import UsersPage from './pages/Users/index';
 import OrganizationPage, { getOrganizationPageData } from './pages/Organization';
 import NotFoundPage from './pages/NotFoundPage';
@@ -14,10 +12,6 @@ import Tag from './pages/Tag';
 import Faq from './pages/Faq/index';
 import Statistics from './pages/Statistics';
 import Ambassador, { getAmbassadorPageData } from './pages/Ambassador';
-import { getAirdropOfferId_1, getAirdropOfferId_2 } from './utils/airdrop';
-
-const airdropOfferId_1 = getAirdropOfferId_1();
-const airdropOfferId_2 = getAirdropOfferId_2();
 
 export default [{
   exact: true,
@@ -57,26 +51,6 @@ export default [{
   exact: true,
   path: '/posts/:id/edit',
   component: EditPostPage,
-}, {
-  exact: true,
-  path: `/posts/${airdropOfferId_1}`,
-  component: Offer,
-  getData: getPostOfferData,
-}, {
-  exact: true,
-  path: `/posts/${airdropOfferId_2}`,
-  component: Offer2,
-  getData: getPostOfferData_2,
-}, {
-  exact: true,
-  path: '/github',
-  component: Offer2,
-  getData: getPostOfferData_2,
-}, {
-  exact: true,
-  path: '/eos',
-  component: EosPost,
-  getData: getEosPostData,
 }, {
   exact: true,
   path: '/posts/:postId',

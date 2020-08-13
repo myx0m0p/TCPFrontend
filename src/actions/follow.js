@@ -2,7 +2,7 @@ import api from '../api';
 import { fetchUser } from './users';
 import { getOrganization } from './organizations';
 import { TRANSACTION_PERMISSION_SOCIAL } from '../utils/constants';
-import { getUosGroupId } from '../utils/config';
+import { getRootCommunityId } from '../utils/config';
 import Worker from '../worker';
 
 export const followUserByAccountName = (ownerAccountName, userAccountName, privateKey) => async (dispatch) => {
@@ -30,12 +30,11 @@ export const unfollowUser = (ownerAccountName, userId, userAccountName, privateK
 };
 
 export const followUosOrg = (ownerAccountName, privateKey) => async (dispatch) => {
-  const uosGroupId = getUosGroupId();
-  const uosOrg = await dispatch(getOrganization(uosGroupId));
+  const uosOrg = await dispatch(getOrganization(getRootCommunityId()));
   const signedTransactionObject = await Worker.getFollowOrganizationSignedTransaction(ownerAccountName, privateKey, uosOrg.blockchainId, TRANSACTION_PERMISSION_SOCIAL);
   const signedTransactionJson = JSON.stringify(signedTransactionObject);
 
-  await api.followOrg(uosGroupId, signedTransactionJson);
+  await api.followOrg(getRootCommunityId(), signedTransactionJson);
 };
 
 export const followOrg = (ownerAccountName, privateKey, orgBlockchainId, orgId) => async (dispatch) => {

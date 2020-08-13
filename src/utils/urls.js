@@ -1,7 +1,7 @@
 import { memoize } from 'lodash';
 import * as overviewUtils from './overview';
 import { POST_TYPE_MEDIA_ID } from './constants';
-import { getBackendConfig, getBaseUrl } from './config';
+import { getBackendApiEndpoint, getBaseUrl } from './config';
 
 const urls = {
   getDirectUrl(path) {
@@ -151,7 +151,7 @@ const urls = {
       return filename;
     }
 
-    return `${getBackendConfig().httpEndpoint}/upload/${filename}`;
+    return `${getBackendApiEndpoint()}/upload/${filename}`;
   }),
 
   getUsersUrl() {

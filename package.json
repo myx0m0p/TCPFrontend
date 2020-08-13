@@ -6,10 +6,10 @@
   "scripts": {
     "start": "npm run dev",
     "server": "pm2 restart ecosystem-test.config.js",
-    "dev:run": "cross-env NODE_ENV=dev BABEL_ENV=server PORT=8080 node-dev --respawn server/index.js",
-    "dev:build": "cross-env BABEL_ENV=dev NODE_ENV=dev webpack --config ./webpack.config.js --mode development --watch",
-    "build": "cross-env BABEL_ENV=development NODE_ENV=dev webpack --config ./webpack.config.js --mode development",
-    "production": "cross-env BABEL_ENV=production NODE_ENV=production webpack --config ./webpack.config.js --mode production"
+    "dev:run": "cross-env NODE_ENV=dev PORT=8080 node-dev --respawn server/index.js",
+    "dev:build": "webpack --config ./webpack.config.js --mode development --watch",
+    "build": "webpack --config ./webpack.config.js --mode production",
+    "production": "webpack --config ./webpack.config.js --mode production"
   },
   "engines": {
     "node": ">=12.18.0"
@@ -29,84 +29,6 @@
   "homepage": "https://github.com/myx0m0p/TCPFrontend/blob/master/README.md",
   "author": "Andrew U <tmyx0m0p@gmail.com>",
   "license": "MIT",
-  "baseUrl": {
-    "production": "https://ucommunity.io",
-    "staging": "http://localhost:8080"
-  },
-  "uosGroupId": {
-    "staging": 41,
-    "production": 4
-  },
-  "airdropOfferId_1": {
-    "staging": 14317,
-    "production": 6137
-  },
-  "airdropOfferId_2": {
-    "staging": 14786,
-    "production": 8515
-  },
-  "gitHubAuthLink": {
-    "staging": "https://github.com/login/oauth/authorize/?client_id=ec17c7e5b1f383034c25&state=5idkWlsZKzbpcD7u&redirect_uri=https://staging-backend.ucommunity.io/api/v1/github/auth_callback?redirect_uri=https://staging.ucommunity.io/posts/14786",
-    "production": "https://github.com/login/oauth/authorize/?client_id=8b4ef608525c8aff2d5e&state=5idkWlsZKzbpcD7u&redirect_uri=https://backend.ucommunity.io/api/v1/github/auth_callback?redirect_uri=https://ucommunity.io/posts/8515"
-  },
-  "eosPostId": {
-    "staging": 14718,
-    "production": 10715
-  },
-  "referralPostId": {
-    "staging": 14718,
-    "production": 11458
-  },
-  "grecaptchaSitekey": "6Leg_KEUAAAAANesBGRTETXBWJycatPc0EneSbTp",
-  "backend": {
-    "development": {
-      "httpEndpoint": "http://localhost:3000",
-      "graphqlEndpoint": "http://localhost:4000",
-      "socketEndpoint": "http://localhost:5000",
-      "uploaderEndpoint": "http://localhost:6000"
-    },
-    "staging": {
-      "httpEndpoint": "http://localhost:3000",
-      "graphqlEndpoint": "http://localhost:4000",
-      "socketEndpoint": "http://localhost:5000",
-      "uploaderEndpoint": "http://localhost:6000"
-    },
-    "production": {
-      "httpEndpoint": "https://backend.ucommunity.io",
-      "graphqlEndpoint": "https://backend.ucommunity.io",
-      "socketEndpoint": "https://websocket.ucommunity.io:443",
-      "uploaderEndpoint": "https://uploader.ucommunity.io"
-    }
-  },
-  "blockchain": {
-    "dev": {
-      "host": "api.uos.network",
-      "protocol": "https",
-      "port": "443"
-    },
-    "staging": {
-      "host": "api.uos.network",
-      "protocol": "https",
-      "port": "443"
-    },
-    "production": {
-      "host": "api.uos.network",
-      "protocol": "https",
-      "port": "443"
-    }
-  },
-  "iframely": {
-    "httpEndpoint": "https://iframely.ucommunity.io/iframely"
-  },
-  "allowedVideoHosts": [
-    "www.youtube.com",
-    "youtube.com",
-    "player.vimeo.com",
-    "coub.com",
-    "www.coub.com"
-  ],
-  "maintenanceMode": false,
-  "socketEnabled": true,
   "devDependencies": {
     "@typescript-eslint/eslint-plugin": "^2.34.0",
     "@typescript-eslint/parser": "^2.34.0",
@@ -125,6 +47,7 @@
     "copy-webpack-plugin": "^4.6.0",
     "cross-env": "^7.0.2",
     "css-loader": "^0.28.11",
+    "dotenv-webpack": "^2.0.0",
     "eslint": "^6.8.0",
     "eslint-config-airbnb-base": "^14.2.0",
     "eslint-import-resolver-typescript": "^2.0.0",

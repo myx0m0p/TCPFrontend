@@ -10,11 +10,8 @@ import { THIRD_STEP_ID } from '../../store/registration';
 import { registrationRegister, registrationSetIsTrackingAllowed } from '../../actions/registration';
 import * as subscribeActions from '../../actions/subscribe';
 import { addErrorNotificationFromResponse } from '../../actions/notifications';
-import { getAirdropOfferId_2 } from '../../utils/airdrop';
-import { getGrecaptchaSitekey } from '../../utils/config';
+import { getGoogleCaptchaSitekey } from '../../utils/config';
 import withLoader from '../../utils/withLoader';
-
-const offerId = getAirdropOfferId_2();
 
 class RegistrationStepThird extends PureComponent {
   constructor(props) {
@@ -36,7 +33,7 @@ class RegistrationStepThird extends PureComponent {
     if (this.props.recaptcha) {
       grecaptcha.ready(() => {
         grecaptcha.render('recaptcha', {
-          sitekey: getGrecaptchaSitekey(),
+          sitekey: getGoogleCaptchaSitekey(),
           callback: () => {
             this.setState({
               recaptchaValid: true,
@@ -54,13 +51,13 @@ class RegistrationStepThird extends PureComponent {
   }
 
   getPrevPageId() {
-    let prevPageId;
-    const prevPath = this.props.prevPath !== null ? this.props.prevPath.match(/\d+/) : null;
+    let prevPageId = null;
+    /* const prevPath = this.props.prevPath !== null ? this.props.prevPath.match(/\d+/) : null;
     if (prevPath !== null && +prevPath[0] === offerId) {
       prevPageId = offerId;
     } else {
       prevPageId = null;
-    }
+    } */
 
     return prevPageId;
   }

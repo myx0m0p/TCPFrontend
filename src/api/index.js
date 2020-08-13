@@ -1,23 +1,24 @@
-import { WalletApi, SocialKeyApi } from '@myx0m0p/tcp-wallet-lib';
+import { ConfigService, SocialKeyApi } from '@myx0m0p/tcp-wallet-lib';
+import { getBlockchainApiEndpoint, getBlockchainHistoryEndpoint } from '../utils/config';
 import humps from 'lodash-humps';
 import param from 'jquery-param';
 import HttpActions from './HttpActions';
 import { getToken } from '../utils/token';
-import { getBackendConfig } from '../utils/config';
+import { getBackendApiEndpoint, getUploaderEndpoint } from '../utils/config';
 import snakes from '../utils/snakes';
 import Worker from '../worker';
 import { LIST_PER_PAGE } from '../utils/constants';
 
-if (process.env.NODE_ENV === 'production') {
-  WalletApi.initForProductionEnv();
-} else {
-  WalletApi.initForStagingEnv();
-}
+ConfigService.init({
+  apiEndpoint: getBlockchainApiEndpoint(),
+  historyEndpoint: getBlockchainHistoryEndpoint(),
+  calculatorEndpoint: getBlockchainApiEndpoint(),
+});
 
 class Api {
   constructor() {
-    this.actions = new HttpActions(getBackendConfig().httpEndpoint);
-    this.uploaderActions = new HttpActions(getBackendConfig().uploaderEndpoint);
+    this.actions = new HttpActions(getBackendApiEndpoint());
+    this.uploaderActions = new HttpActions(getUploaderEndpoint());
   }
 
   getPrivateHeaders() {

@@ -7,7 +7,7 @@ import { Page } from './Layout';
 import Auth from './Auth/Features/Login';
 import Notifications from './Notifications';
 import socket from '../api/socket';
-import config from '../../package.json';
+import { isMaintenanceMode, isWebsocketEnabled } from '../../package.json';
 import { enableGtm } from '../utils/gtm';
 import { initDragAndDropListeners } from '../utils/dragAndDrop';
 import routes from '../routes';
@@ -48,11 +48,11 @@ const App = () => {
       document.body.classList.remove('dragenter');
     });
 
-    if (config.socketEnabled) {
+    if (isWebsocketEnabled()) {
       socket.connect();
     }
 
-    if (config.maintenanceMode) {
+    if (isMaintenanceMode()) {
       dispatch(addMaintenanceNotification());
     }
 

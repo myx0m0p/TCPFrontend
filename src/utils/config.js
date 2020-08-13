@@ -1,38 +1,76 @@
-import config from '../../package.json';
-
-export const getBackendConfig = () => (
-  config.backend[process.env.NODE_ENV]
-  // process.env.NODE_ENV === 'production' ? config.backend.production : config.backend.staging
+export const getBaseUrl = () => (
+  process.env.BASE_URL
 );
 
-export const getUosGroupId = () => (
-  process.env.NODE_ENV === 'production' ? config.uosGroupId.production : config.uosGroupId.staging
+export const getBackendApiEndpoint = () => (
+  process.env.BACKEND_API_ENDPOINT
 );
 
-export const getEosPostId = () => (
-  process.env.NODE_ENV === 'production' ? config.eosPostId.production : config.eosPostId.staging
+export const getGraphqlEndpoint = () => (
+  process.env.BACKEND_GRAPHQL_ENDPOINT
 );
 
-export const getReferralPostId = () => (
-  process.env.NODE_ENV === 'production' ? config.referralPostId.production : config.referralPostId.staging
+export const getWebsocketEndpoint = () => (
+  process.env.BACKEND_WEBSOCKET_ENDPOINT
 );
 
-export const getGrecaptchaSitekey = () => (
-  config.grecaptchaSitekey
+export const getUploaderEndpoint = () => (
+  process.env.BACKEND_UPLOADER_ENDPOINT
 );
+
 
 export const getBlockchainHost = () => (
-  config.blockchain[process.env.NODE_ENV === 'production' ? 'production' : 'staging'].host
+  process.env.BLOCKCHAIN_API_HOST
 );
 
 export const getBlockchainPort = () => (
-  config.blockchain[process.env.NODE_ENV === 'production' ? 'production' : 'staging'].port
+  process.env.BLOCKCHAIN_API_PORT
 );
 
 export const getBlockchainProtocol = () => (
-  config.blockchain[process.env.NODE_ENV === 'production' ? 'production' : 'staging'].protocol
+  process.env.BLOCKCHAIN_API_PROTOCOL
 );
 
-export const getBaseUrl = () => (
-  config.baseUrl[process.env.NODE_ENV === 'production' ? 'production' : 'staging']
+export const getBlockchainApiEndpoint = () => (
+  process.env.BLOCKCHAIN_API_ENDPOINT
 );
+
+export const getBlockchainHistoryEndpoint = () => (
+  process.env.BLOCKCHAIN_HISTORY_ENDPOINT
+);
+
+
+
+export const isMaintenanceMode = () => (
+  process.env.MAINTENANCE_MODE
+);
+
+export const isWebsocketEnabled = () => (
+  process.env.WEBSOCKET_ENABLED
+);
+
+
+
+export const getIframelyEndpoint = () => (
+  process.env.IFRAMELY_ENDPOINT
+);
+
+export const getAllowedVideoHosts = () => (
+  process.env.ALLOWED_VIDEO_HOSTS.split(',')
+);
+
+
+export const getGoogleCaptchaSitekey = () => (
+  process.env.GOOGLE_CAPTCHA_SITE_KEY
+);
+
+
+export const getRootCommunityId = () => (
+  process.env.ROOT_COMMUNITY_ID
+);
+
+export const getReferralPostId = () => (
+  process.env.REFERRAL_POST_ID
+);
+
+

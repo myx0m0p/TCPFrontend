@@ -4,7 +4,7 @@ import xss from 'xss';
 import humps from 'lodash-humps';
 import axios from 'axios';
 import { truncate } from 'lodash';
-import config from '../../package.json';
+import { getIframelyEndpoint, getAllowedVideoHosts } from '../../package.json';
 import { extractHostname, validUrl } from './url';
 import Embed from '../components/Embed';
 import { getEmbedByUrl } from './entityImages';
@@ -36,7 +36,7 @@ export default class EmbedService {
       let videoUrl;
       let videoAspectRatio;
       let imageUrl;
-      const response = humps(await axios.get(config.iframely.httpEndpoint, { params: { url, autoplay: 1, mute: 1 } }));
+      const response = humps(await axios.get(getIframelyEndpoint(), { params: { url, autoplay: 1, mute: 1 } }));
       const { data: { links: { player, thumbnail }, meta } } = response;
 
       if (player && player.length) {
@@ -52,7 +52,7 @@ export default class EmbedService {
 
         const validPlayer = sortedPlayers[0];
 
-        if (validPlayer && config.allowedVideoHosts.includes(extractHostname(validPlayer.href))) {
+        if (validPlayer && getAllowedVideoHosts().includes(extractHostname(validPlayer.href))) {
           videoUrl = validPlayer.href;
           videoAspectRatio = validPlayer.media.aspectRatio;
         }

@@ -2,7 +2,7 @@ import { GraphQLSchema } from '@myx0m0p/tcp-graphql-lib';
 import humps from 'lodash-humps';
 import * as axios from 'axios';
 import snakes from '../utils/snakes';
-import { getBackendConfig } from '../utils/config';
+import { getGraphqlEndpoint } from '../utils/config';
 import { getToken } from '../utils/token';
 import { COMMENTS_PER_PAGE } from '../utils/comments';
 import { FEED_PER_PAGE } from '../utils';
@@ -22,7 +22,7 @@ const request = async (data, extraOptions = {}) => {
   let options = {
     headers: {},
     withCredentials: true,
-    baseURL: getBackendConfig().graphqlEndpoint,
+    baseURL: getGraphqlEndpoint(),
   };
 
   const token = getToken();

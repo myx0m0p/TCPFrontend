@@ -86,3 +86,5 @@ app.post('/subscribe', async (req, res) => {
 });
 
 app.listen(process.env.PORT || 3000);
+
+console.info(`Server started in ${process.env.NODE_ENV} mode on ${process.env.PORT || 3000} port.`);

@@ -5,7 +5,7 @@ import { LayoutBase, Content } from '../../components/Layout';
 import VerticalMenu from '../../components/VerticalMenu';
 import Footer from '../../components/Footer';
 import { PanelHashWrapper } from '../../components/Panel';
-import { getUosGroupId } from '../../utils/config';
+import { getRootCommunityId } from '../../utils/config';
 import urls from '../../utils/urls';
 import styles from './styles.css';
 
@@ -193,7 +193,7 @@ const Faq = () => (
                   id: 'question-16',
                   title: 'Who is building U°Community?',
                   content: (
-                    <p>Check the <Link className="link red" target="_blank" to={urls.getOrganizationUrl(getUosGroupId())}>board of U°OS Network.</Link> We are a team that believes in the sovereignty of the <a href="#question-49" className="link red">Digital individual</a> and in the <a href="#question-53" className="link red">Network economy</a>.</p>
+                    <p>Check the <Link className="link red" target="_blank" to={urls.getOrganizationUrl(getRootCommunityId())}>board of U°OS Network.</Link> We are a team that believes in the sovereignty of the <a href="#question-49" className="link red">Digital individual</a> and in the <a href="#question-53" className="link red">Network economy</a>.</p>
                   ),
                 },
                 {
@@ -318,7 +318,7 @@ const Faq = () => (
                   content: (
                     <Fragment>
                       <p>
-                        Check the <Link className="link red" target="_blank" to={urls.getOrganizationUrl(getUosGroupId())}>board of U°OS Network </Link>
+                        Check the <Link className="link red" target="_blank" to={urls.getOrganizationUrl(getRootCommunityId())}>board of U°OS Network </Link>
                         and the <a className="link red" target="_blank" rel="noopener noreferrer" href="https://github.com/orgs/UOSnetwork/people">U°OS Network GitHub.</a> We are a group of people that believe in the sovereignty of the <a href="#question-49" className="link red">Digital individual</a> and in the <a href="#question-53" className="link red">Network economy</a>.
                       </p>
                       <p>You are more than welcome to join us.</p>
