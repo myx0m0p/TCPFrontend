@@ -4,8 +4,7 @@
   "description": "TCP Frontend",
   "main": "index.js",
   "scripts": {
-    "start": "npm run dev",
-    "server": "pm2 restart ecosystem-test.config.js",
+    "start": "npm run dev:run",
     "dev:run": "cross-env NODE_ENV=dev PORT=8080 node-dev --respawn server/index.js",
     "dev:build": "webpack --config ./webpack.config.js --mode development --watch",
     "build": "webpack --config ./webpack.config.js --mode production",
@@ -70,7 +69,6 @@
     "less": "^3.12.0",
     "less-loader": "^4.1.0",
     "node-dev": "^5.0.0",
-    "pm2": "^4.4.0",
     "postcss-loader": "^2.1.5",
     "react-countdown-now": "^2.1.2",
     "style-loader": "^0.21.0",
