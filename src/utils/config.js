@@ -59,6 +59,10 @@ export const getAllowedVideoHosts = () => (
   process.env.ALLOWED_VIDEO_HOSTS.split(',')
 );
 
+export const getMailchimpKey = () => (
+  process.env.MAILCHIMP_KEY
+);
+
 
 export const getGoogleCaptchaSitekey = () => (
   process.env.GOOGLE_CAPTCHA_SITE_KEY

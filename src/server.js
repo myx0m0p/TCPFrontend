@@ -1,5 +1,5 @@
 const cookieParser = require('cookie-parser');
-const config = require('config');
+const { getMailchimpKey } = require('./utils/config');
 const bodyParser = require('body-parser');
 const axios = require('axios');
 const xss = require('xss');
@@ -74,7 +74,7 @@ app.post('/subscribe', async (req, res) => {
       {
         auth: {
           username: 'anystring',
-          password: config.get('mailchimp.key'),
+          password: getMailchimpKey(),
         },
       },
     );
