@@ -4,11 +4,10 @@
   "description": "TCP Frontend",
   "main": "index.js",
   "scripts": {
-    "start": "npm run dev:run",
-    "dev:run": "cross-env NODE_ENV=dev PORT=8080 node-dev --respawn server/index.js",
-    "dev:build": "webpack --config ./webpack.config.js --mode development --watch",
-    "build": "webpack --config ./webpack.config.js --mode production",
-    "production": "webpack --config ./webpack.config.js --mode production"
+    "start": "npm run server",
+    "server": "cross-env PORT=8080 node-dev --notify=false --ignore=['node_modules'] --respawn server/index.js",
+    "watch": "webpack --mode development --watch",
+    "build": "webpack --mode production"
   },
   "engines": {
     "node": ">=12.18.0"
@@ -82,7 +81,7 @@
   "dependencies": {
     "@myx0m0p/tcp-common-lib": "^1.0.4",
     "@myx0m0p/tcp-graphql-lib": "^1.0.1",
-    "@myx0m0p/tcp-wallet-lib": "^1.0.4",
+    "@myx0m0p/tcp-wallet-lib": "^1.1.0",
     "@scatterjs/core": "^2.7.53",
     "@scatterjs/eosjs2": "^1.5.35",
     "@tippy.js/react": "^1.1.1",
@@ -93,7 +92,6 @@
     "body-parser": "^1.19.0",
     "classnames": "^2.2.6",
     "comlink": "^4.3.0",
-    "config": "^3.3.1",
     "cookie-parser": "^1.4.5",
     "crypto": "^1.0.1",
     "crypto-js": "^3.3.0",
