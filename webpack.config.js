@@ -169,6 +169,15 @@ const serverConfig = {
         }],
       },
       {
+        test: /\.(png|svg|gif|jpg|jpeg)/,
+        use: {
+          loader: 'file-loader',
+          options: {
+            name: 'images/[path][name].[ext]',
+          },
+        },
+      },
+      {
         test: /\.(html)$/,
         use: {
           loader: 'html-loader',
