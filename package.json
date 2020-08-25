@@ -4,7 +4,7 @@
   "description": "TCP Frontend",
   "main": "index.js",
   "scripts": {
-    "start": "npm run server",
+    "start": "run-p watch server",
     "server": "cross-env PORT=8080 node-dev --notify=false --ignore=['node_modules'] --respawn server/index.js",
     "watch": "webpack --mode development --watch",
     "build": "webpack --mode production"
@@ -48,7 +48,7 @@
     "dotenv-webpack": "^2.0.0",
     "eslint": "^6.8.0",
     "eslint-config-airbnb-base": "^14.2.0",
-    "eslint-import-resolver-typescript": "^2.0.0",
+    "eslint-import-resolver-typescript": "^2.2.1",
     "eslint-loader": "^4.0.2",
     "eslint-plugin-import": "^2.22.0",
     "eslint-plugin-jest": "^23.18.0",
@@ -67,7 +67,8 @@
     "isomorphic-style-loader": "^5.1.0",
     "less": "^3.12.0",
     "less-loader": "^4.1.0",
-    "node-dev": "^5.0.0",
+    "node-dev": "^5.2.0",
+    "npm-run-all": "^4.1.5",
     "postcss-loader": "^2.1.5",
     "react-countdown-now": "^2.1.2",
     "style-loader": "^0.21.0",
@@ -79,9 +80,9 @@
     "worker-loader": "^2.0.0"
   },
   "dependencies": {
-    "@myx0m0p/tcp-common-lib": "^1.0.4",
+    "@myx0m0p/tcp-common-lib": "^1.0.5",
     "@myx0m0p/tcp-graphql-lib": "^1.0.1",
-    "@myx0m0p/tcp-wallet-lib": "^1.1.0",
+    "@myx0m0p/tcp-wallet-lib": "^1.2.1",
     "@scatterjs/core": "^2.7.53",
     "@scatterjs/eosjs2": "^1.5.35",
     "@tippy.js/react": "^1.1.1",
@@ -100,7 +101,7 @@
     "eosjs-ecc": "^4.0.7",
     "express": "^4.17.1",
     "history": "^4.10.1",
-    "i18next": "^19.6.0",
+    "i18next": "^19.7.0",
     "imports-loader": "^0.8.0",
     "jquery-param": "^1.1.2",
     "js-cookie": "^2.2.1",
@@ -122,7 +123,7 @@
     "react-device-detect": "^1.13.1",
     "react-dom": "^16.13.1",
     "react-dropzone": "^5.1.1",
-    "react-i18next": "^11.7.0",
+    "react-i18next": "^11.7.1",
     "react-redux": "^7.2.0",
     "react-router": "^5.2.0",
     "react-router-dom": "^5.2.0",
@@ -140,7 +141,7 @@
     "tributejs": "git+https://github.com/UOSnetwork/tribute.git",
     "uuid": "^3.4.0",
     "validate.js": "^0.12.0",
-    "validatorjs": "^3.18.1",
+    "validatorjs": "^3.19.1",
     "xss": "^1.0.7"
   }
 }
