@@ -7,7 +7,7 @@ import { Page } from './Layout';
 import Auth from './Auth/Features/Login';
 import Notifications from './Notifications';
 import socket from '../api/socket';
-import { isMaintenanceMode, isWebsocketEnabled } from '../../package.json';
+import { isMaintenanceMode, isWebsocketEnabled } from '../utils/config';
 import { enableGtm } from '../utils/gtm';
 import { initDragAndDropListeners } from '../utils/dragAndDrop';
 import routes from '../routes';

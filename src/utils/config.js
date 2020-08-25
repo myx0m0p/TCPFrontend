@@ -42,11 +42,11 @@ export const getBlockchainHistoryEndpoint = () => (
 
 
 export const isMaintenanceMode = () => (
-  process.env.MAINTENANCE_MODE
+  process.env.MAINTENANCE_MODE === 'true'
 );
 
 export const isWebsocketEnabled = () => (
-  process.env.WEBSOCKET_ENABLED
+  process.env.WEBSOCKET_ENABLED === 'true'
 );
 
 
