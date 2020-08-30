@@ -33,9 +33,9 @@ export const editStake = (accountName, privateKey, netAmount, cpuAmount) => () =
 export const getAccount = accountName => async (dispatch) => {
   const data = await WalletApi.getAccountState(accountName);
 
-  console.log(data);
+/*   console.log(data);
 
-  data.tokens.uosFutures = await WalletApi.getAccountBalance(accountName, 'UOSF');
+  data.tokens.uosFutures = await WalletApi.getAccountBalance(accountName, 'UOSF'); */
 
   dispatch(accountActions.merge(humps(data)));
 };
