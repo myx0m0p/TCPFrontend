@@ -82,7 +82,7 @@
   "dependencies": {
     "@myx0m0p/tcp-common-lib": "^1.0.5",
     "@myx0m0p/tcp-graphql-lib": "^1.0.1",
-    "@myx0m0p/tcp-wallet-lib": "^1.2.1",
+    "@myx0m0p/tcp-wallet-lib": "^1.2.2",
     "@scatterjs/core": "^2.7.53",
     "@scatterjs/eosjs2": "^1.5.35",
     "@tippy.js/react": "^1.1.1",
