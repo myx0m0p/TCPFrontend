@@ -103,8 +103,8 @@ class Api {
     });
 
     await Worker.bindSocialKeyWithSocialPermissions(accountName, activeKey, socialPublicKey);
-    await Worker.addSocialPermissionsToEmissionAndProfile(accountName, activeKey);
-    await Worker.addSocialPermissionsToProposeApproveAndExecute(accountName, activeKey);
+    //await Worker.addSocialPermissionsToEmissionAndProfile(accountName, activeKey);
+    //await Worker.addSocialPermissionsToProposeApproveAndExecute(accountName, activeKey);
 
     return humps(response.data);
   }
