@@ -1,3 +1,4 @@
+import { TOKEN_SYMBOL } from '@myx0m0p/tcp-wallet-lib/dist/lib/dictionary/currency-dictionary'
 import { useTranslation, Trans } from 'react-i18next';
 import { withRouter } from 'react-router-dom';
 import moment from 'moment';
@@ -56,9 +57,9 @@ const UserWallet = ({ location }) => {
   const [accountInitialLoading, setAccountInitialLoading] = useState(false);
   const [transactionsInitialLoading, setTransactionsInitialLoading] = useState(false);
   const [transactionsMoreLoading, setTransactionsMoreLoading] = useState(false);
-  const [emissionLoading, setEmissionLoading] = useState(false);
+/*   const [emissionLoading, setEmissionLoading] = useState(false);
   const [timelockLoading, setTimelockLoading] = useState(false);
-  const [activityLoading, setActivityLoading] = useState(false);
+  const [activityLoading, setActivityLoading] = useState(false); */
   const validTransactionsData = transactions.data.filter(i => transactionTypes.includes(i.trType));
   const transactionsGroups = groupBy(validTransactionsData, (trx) => {
     const date = new Date(trx.updatedAt);
@@ -80,21 +81,19 @@ const UserWallet = ({ location }) => {
     showPlaceholder: accountInitialLoading,
     sections: [],
   };
-  let emissionCards = [{
+  let emissionCards = [/* {
     disabled: true,
     amount: '0 UOS',
     label: t('Your Emission'),
-  }];
+  } */];
 
   if (account.tokens) {
     tokenCards.push({
       color: '#B3E1E1',
       icon: <UserPick src={urls.getFileUrl(owner.avatarFilename)} size={32} />,
       tokens: [{
-        title: `UOS ${formatNumber(account.tokens.active || 0)}`,
-        label: t('staked UOS', { count: formatNumber(account.tokens.staked || 0) }),
-      }, {
-        title: `UOSF ${formatNumber(account.tokens.uosFutures || 0)}`,
+        title: `${TOKEN_SYMBOL} ${formatNumber(account.tokens.active || 0)}`,
+        label: t('staked ${TOKEN_SYMBOL}', { count: formatNumber(account.tokens.staked || 0) }),
       }],
       actions: [{
         title: t('Send'),
@@ -159,7 +158,7 @@ const UserWallet = ({ location }) => {
     });
   }
 
-  if (account.tokens) {
+  /* if (account.tokens) {
     emissionCards = [{
       disabled: account.tokens.emission === 0,
       amount: `${formatNumber(account.tokens.emission)} UOS`,
@@ -225,7 +224,7 @@ const UserWallet = ({ location }) => {
         },
       });
     }
-  }
+  } */
 
   const getInitialAccountData = async () => {
     setAccountInitialLoading(true);
