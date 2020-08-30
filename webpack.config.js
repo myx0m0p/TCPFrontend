@@ -197,6 +197,7 @@ const serverConfig = {
     path: path.resolve(__dirname, 'server'),
     filename: 'index.js',
     publicPath: '/',
+    globalObject: 'typeof self !== \'undefined\' ? self : this',
   },
 
   stats: {
